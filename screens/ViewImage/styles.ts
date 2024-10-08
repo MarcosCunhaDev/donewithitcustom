@@ -1,6 +1,5 @@
 import styled from 'styled-components/native';
 
-// Container
 const Container = styled.SafeAreaView`
   flex: 1;
   background-color: black;
@@ -9,7 +8,6 @@ const Container = styled.SafeAreaView`
   align-items: center;
 `;
 
-// Photo
 const Photo = styled.Image`
   width: 100%;
   height: 100%;
@@ -18,7 +16,6 @@ const Photo = styled.Image`
   flex-shrink: 1;
 `;
 
-// RowIcons
 const RowIcons = styled.View`
   margin-top: 30px;
   position: relative;
@@ -29,7 +26,6 @@ const RowIcons = styled.View`
   align-items: flex-start;
 `;
 
-// Placeholder
 const Placeholder = styled.View`
   position: relative;
   width: 50px;
