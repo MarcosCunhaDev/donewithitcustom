@@ -14,7 +14,7 @@ My main objective with this project is to apply the best concepts and practices 
 2. Start backend server locally 
 
    ```bash
-   Clone the repository from this link and run it locally.
+   Clone the repository from this link (https://github.com/MarcosCunhaDev/donewithit-server) and run it locally.
    ```
 
 
