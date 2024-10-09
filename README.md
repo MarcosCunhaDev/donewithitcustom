@@ -11,12 +11,19 @@ My main objective with this project is to apply the best concepts and practices 
    ```bash
    yarn 
    ```
+2. Start backend server locally 
 
-2. Start the app
+   ```bash
+   Clone the repository from this link and run it locally.
+   ```
+
+
+3. Start the app
 
    ```bash
     yarn start
    ```
+
 
 In the output, you'll find options to open the app in a
 
