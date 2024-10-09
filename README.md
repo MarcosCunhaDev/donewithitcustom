@@ -1,6 +1,8 @@
 # Welcome to your Donewithit app 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This project is a small virtual store where users can post products they want to sell and potentially buy used items at a lower price. It was originally developed using Expo, JavaScript, and default React Native styles. 
+
+The main objective of this project is to apply the best concepts and practices of mobile development with React Native, using technologies such as TypeScript, React Query, React Context, Styled Components, and native APIs from Expo. Tests will also be added.
 
 ## Get started
 
