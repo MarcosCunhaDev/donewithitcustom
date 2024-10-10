@@ -7,10 +7,10 @@ import {
   TouchableHighlight,
   ImageSourcePropType,
 } from "react-native";
-import colors from "../../config/colors";
 import Swipeable from "react-native-gesture-handler/Swipeable";
 import { Entypo } from "@expo/vector-icons";
 import { Avatar, CardContainer, RowText, SubTitle, Title } from "./styles";
+import { useTheme } from "styled-components/native";
 
 interface ListItemI {
   title?: string;
@@ -31,6 +31,7 @@ const ListItem = ({
   renderRightActions,
   showChevrons,
 }: ListItemI) => {
+  const { colors } = useTheme();
   return (
     <Swipeable renderRightActions={renderRightActions}>
       <TouchableHighlight underlayColor={colors.light} onPress={onPress}>

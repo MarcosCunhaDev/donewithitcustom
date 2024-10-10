@@ -8,8 +8,9 @@ import {
 import * as ImagePicker from "expo-image-picker";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import defaultStyles from "@/config/defaultStyles";
-import colors from "@/config/colors";
 import { Container } from "./styles";
+import { useTheme } from "styled-components/native";
+
 
 const styles = StyleSheet.create({
   container: {
@@ -34,6 +35,7 @@ interface ImageInputI {
 }
 
 const ImageInput = ({ imageUri, onChangeImage }: ImageInputI) => {
+  const { colors } = useTheme();
   const requestPermission = async () => {
     const { granted } = await ImagePicker.getCameraPermissionsAsync();
     if (!granted) {

@@ -2,7 +2,7 @@ import LottieView from "lottie-react-native";
 import React from "react";
 import { Modal } from "react-native";
 import * as Progress from "react-native-progress";
-import colors from "../../config/colors";
+import colors from "../../config/theme";
 import { Container } from "./styles";
 
 interface UploadScreenI {

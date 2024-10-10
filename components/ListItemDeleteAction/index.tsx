@@ -1,7 +1,8 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableWithoutFeedback } from "react-native";
-import colors from "../../config/colors";
+import colors from "@/config/theme";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useTheme } from "styled-components/native";
 
 const styles = StyleSheet.create({
   style: {
@@ -13,6 +14,7 @@ const styles = StyleSheet.create({
 });
 
 const ListItemDeleteAction = ({ onPress }: { onPress: () => void }) => {
+  const { colors } = useTheme();
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.style}>

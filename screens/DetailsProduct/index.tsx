@@ -10,8 +10,6 @@ import {
 } from "react-native";
 
 
-import colors from "../../config/colors";
-
 import ListItem from "../../components/ListItem";
 
 const DetailsProduct = () => {

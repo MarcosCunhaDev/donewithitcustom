@@ -1,8 +1,7 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-
-import colors from "../../config/colors";
 import styles from "./styles";
+import { useTheme } from "styled-components/native";
 
 interface ButtonI {
   label: string;
@@ -11,6 +10,8 @@ interface ButtonI {
 }
 
 const Button = ({ label, color, onPress }: ButtonI) => {
+  const { colors } = useTheme();
+
   return (
     <TouchableOpacity
       onPress={onPress}

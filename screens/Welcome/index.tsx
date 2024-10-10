@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import Button from "../../components/Button";
-import colors from "../../config/colors";
+import colors from "@/config/theme";
 import {
   BoxLogo,
   ButtonsContainer,

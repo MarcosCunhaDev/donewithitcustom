@@ -2,7 +2,7 @@ import { useAuthContext } from "@/auth/context";
 import Icon from "@/components/IconBox";
 import ItemSeparator from "@/components/ItemSeparator";
 import ListItem from "@/components/ListItem";
-import colors from "@/config/colors";
+import colors from "@/config/theme";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { FlatList, StyleSheet, View } from "react-native";
