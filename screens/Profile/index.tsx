@@ -9,6 +9,7 @@ import * as Yup from "yup";
 import { Container, Logo, ProfileImage, ContainerButton } from "./styles";
 import { useLogin } from "@/hooks/react-query/auth";
 import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
+import { InputPicture } from "@/components/InputPicture";
 
 interface LoginFormValues {
   email: string;
@@ -52,9 +53,7 @@ const Profile = () => {
             error="Invalid email and/or password."
             visible={isError}
           />
-          <ProfileImage>
-            <MaterialCommunityIcons name="account" size={80} color={"gray"} />
-          </ProfileImage>
+          <InputPicture />
           <AppFormField
             icon="account"
             placeholder="Name"
