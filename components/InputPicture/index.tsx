@@ -43,8 +43,8 @@ export const InputPicture = () => {
     </View>
   ) : (
     <TouchableOpacity onPress={handlePickImage}>
-      <View className="flex flex-row  justify-center align-middle w-24 h-24 rounded-full bg-slate-100 border border-gray-300 mt-6 mb-6">
-        <MaterialCommunityIcons name="account" size={80} color={"gray"} />
+      <View className="flex flex-row  justify-center align-middle w-28 h-28 rounded-full bg-slate-100 border border-gray-300 mt-6 mb-6">
+        <MaterialCommunityIcons name="account" size={90} color={"gray"} />
         <View className="w-8 h-8 justify-center align-middle absolute bottom-1 -right-2">
           <MaterialCommunityIcons
             name="pencil-circle"
