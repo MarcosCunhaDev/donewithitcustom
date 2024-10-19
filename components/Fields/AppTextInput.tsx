@@ -4,8 +4,8 @@ import {
   View,
   TextInput,
   StyleSheet,
-  Dimensions,
   TextInputProps,
+  DimensionValue,
 } from "react-native";
 
 import defaultStyles from "../../config/defaultStyles";
@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     padding: 12,
     marginVertical: 10,
     backgroundColor: defaultStyles.colors.light,
+    width: "100%",
   },
   icon: {
     marginRight: 10,
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
 
 interface AppTextInputI extends TextInputProps {
   icon?: keyof typeof MaterialCommunityIcons.glyphMap;
-  widthContainer?: number | string;
+  widthContainer?: DimensionValue;
 }
 
 const AppTextInput = ({
@@ -46,7 +47,7 @@ const AppTextInput = ({
       )}
       <TextInput
         placeholderTextColor={defaultStyles.colors.medium}
-        style={defaultStyles.text}
+        style={[defaultStyles.text, { width: "90%" }]}
         {...otherProps}
       />
     </View>
