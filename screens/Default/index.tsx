@@ -4,9 +4,7 @@ import Constants from "expo-constants";
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: Constants.statusBarHeight,
     flex: 1,
-    backgroundColor: "white",
   },
   view: {},
 });
@@ -19,8 +17,8 @@ const Screen = ({
   style?: any;
 }) => {
   return (
-    <SafeAreaView style={[styles.container]}>
-      <View style={[styles.view, style]}>{children}</View>
+    <SafeAreaView style={[styles.container]} className="flex flex-1 bg-white">
+      <View className="flex flex-1 px-4 py-4">{children}</View>
     </SafeAreaView>
   );
 };

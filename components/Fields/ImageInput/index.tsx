@@ -80,7 +80,7 @@ const ImageInput = ({ imageUri, onChangeImage }: ImageInputI) => {
       {imageUri ? (
         <Image source={{ uri: imageUri }} style={styles.container} />
       ) : (
-        <Container>
+        <Container className="bg-gray-100">
           <MaterialCommunityIcons
             name="camera"
             size={35}

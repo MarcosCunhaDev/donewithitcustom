@@ -5,5 +5,4 @@ export const Container = styled.View`
   align-items: center;
   border-radius: 15px;
   justify-content: flex-start;
-  margin-horizontal: 10px;
 `;

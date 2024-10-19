@@ -1,11 +1,9 @@
 import styled from 'styled-components/native';
 
 const CardContainer = styled.View`
-  padding: 15px;
   width: 100%;
   flex-direction: row;
   align-items: center;
-  background-color: ${({ theme }) => 'white'};
 `;
 
 const Avatar = styled.Image`

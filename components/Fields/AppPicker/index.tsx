@@ -72,7 +72,10 @@ const AppPicker = ({
   return (
     <>
       <TouchableWithoutFeedback onPress={() => setShowModal(true)}>
-        <Container widthContainer={widthContainer}>
+        <Container
+          widthContainer={widthContainer}
+          className="rounded-md bg-gray-100"
+        >
           {icon && (
             <MaterialCommunityIcons
               name={icon}

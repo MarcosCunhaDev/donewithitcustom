@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  TouchableHighlight,
-  ImageSourcePropType,
-} from "react-native";
+import { TouchableHighlight, ImageSourcePropType } from "react-native";
 import Swipeable from "react-native-gesture-handler/Swipeable";
 import { Entypo } from "@expo/vector-icons";
 import { Avatar, CardContainer, RowText, SubTitle, Title } from "./styles";
@@ -35,7 +28,7 @@ const ListItem = ({
   return (
     <Swipeable renderRightActions={renderRightActions}>
       <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
-        <CardContainer>
+        <CardContainer className="bg-white px-0 py-4">
           {IconComponent}
           {image && <Avatar source={image} />}
           <RowText>

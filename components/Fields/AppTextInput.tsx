@@ -14,10 +14,8 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     alignItems: "center",
-    borderRadius: 25,
     padding: 12,
     marginVertical: 10,
-    backgroundColor: defaultStyles.colors.light,
     width: "100%",
   },
   icon: {
@@ -36,7 +34,10 @@ const AppTextInput = ({
   ...otherProps
 }: AppTextInputI) => {
   return (
-    <View style={{ ...styles.container, width: widthContainer || "100%" }}>
+    <View
+      style={{ ...styles.container, width: widthContainer || "100%" }}
+      className="rounded-md bg-gray-100"
+    >
       {icon && (
         <MaterialCommunityIcons
           name={icon}

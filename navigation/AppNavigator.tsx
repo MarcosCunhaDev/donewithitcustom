@@ -42,6 +42,7 @@ const AppNavigator = () => {
         },
         tabBarActiveTintColor: "tomato",
         tabBarInactiveTintColor: "gray",
+        headerShown: false,
       })}
     >
       <Tab.Screen
@@ -52,8 +53,7 @@ const AppNavigator = () => {
       <Tab.Screen
         name="Add Product"
         component={ListingEditScreen}
-        options={{ title: "" }}
-        // options={{ headerShown: false }}
+        options={{ title: "Add Product", headerShown: true }}
       />
       <Tab.Screen
         name="Account"

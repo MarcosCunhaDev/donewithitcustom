@@ -58,7 +58,7 @@ const MyAccount = () => {
   const navigation = useNavigation<any>();
 
   return (
-    <Screen style={styles.screen}>
+    <Screen>
       <StatusBar style="dark" />
       <View style={styles.container}>
         <ListItem

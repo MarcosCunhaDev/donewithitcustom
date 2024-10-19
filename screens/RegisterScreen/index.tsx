@@ -6,9 +6,10 @@ import SubmitButton from "@/components/Forms/SubmitButton";
 import { Formik, useFormik, useFormikContext } from "formik";
 import React, { useEffect, useState } from "react";
 import * as Yup from "yup";
-import { Container, Logo, ContainerButton, ContainerInputs } from "./styles";
+import { ContainerButton, ContainerInputs } from "./styles";
 import { useLogin, useRegisterUser } from "@/hooks/react-query/auth";
 import ActivityIndicator from "@/components/ActivityIndicator";
+import { View } from "react-native";
 
 interface SignupFormValues {
   name: string;
@@ -38,7 +39,7 @@ const Signup = () => {
   } = useRegisterUser();
   const { isPending: isPendingLogin } = useLogin();
 
-  const {} = useFormik();
+  // const {} = useFormik();
 
   const handleSubmit = async ({ name, email, password }: SignupFormValues) => {
     await signup({ name, email, password });
@@ -47,7 +48,7 @@ const Signup = () => {
   return (
     <>
       <ActivityIndicator visible={isPendingLogin || isPendingSignup} />
-      <Container>
+      <View className="flex flex-1 bg-white px-4 py-2">
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -92,7 +93,7 @@ const Signup = () => {
             </ContainerButton>
           </>
         </Formik>
-      </Container>
+      </View>
     </>
   );
 };

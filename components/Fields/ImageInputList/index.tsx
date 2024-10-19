@@ -28,19 +28,23 @@ const ImageInputList = ({
         showsHorizontalScrollIndicator={false}
       >
         <Container>
-          {imageUris.map((uri) => {
+          {imageUris.map((uri, index) => {
             return (
-              <ImageInput
-                key={uri}
-                imageUri={uri}
-                onChangeImage={() => onRemoveImage(uri)}
-              />
+              <View className={`${index !== 0 ? "ml-1" : "ml-0"}`}>
+                <ImageInput
+                  key={uri}
+                  imageUri={uri}
+                  onChangeImage={() => onRemoveImage(uri)}
+                />
+              </View>
             );
           })}
-          <ImageInput
-            imageUri={null}
-            onChangeImage={(uri) => onAddImage(uri)}
-          />
+          <View className={`${imageUris.length > 0 ? "ml-1" : "ml-0"}`}>
+            <ImageInput
+              imageUri={null}
+              onChangeImage={(uri) => onAddImage(uri)}
+            />
+          </View>
         </Container>
       </ScrollView>
     </View>

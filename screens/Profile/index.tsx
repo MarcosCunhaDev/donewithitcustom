@@ -42,7 +42,7 @@ const Profile = () => {
   };
 
   return (
-    <Container>
+    <Container className="bg-white">
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}

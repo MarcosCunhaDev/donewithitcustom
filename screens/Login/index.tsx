@@ -1,13 +1,12 @@
-import { login } from "@/api/auth";
 import { useAuthContext } from "@/auth/context";
 import AppFormField from "@/components/Forms/AppFormField";
 import ErrorMessage from "@/components/Forms/ErrorMessage";
 import SubmitButton from "@/components/Forms/SubmitButton";
-import { Formik } from "formik";
-import React, { useState } from "react";
-import * as Yup from "yup";
-import { Container, Logo } from "./styles";
 import { useLogin } from "@/hooks/react-query/auth";
+import { Formik } from "formik";
+import React from "react";
+import { Image, View } from "react-native";
+import * as Yup from "yup";
 
 interface LoginFormValues {
   email: string;
@@ -39,8 +38,11 @@ const Login = () => {
   };
 
   return (
-    <Container>
-      <Logo source={require("../../assets/logo-red.png")} />
+    <View className="bg-white px-4 py-2">
+      <Image
+        className="mb-5 mt-14 h-20 w-20 self-center"
+        source={require("../../assets/logo-red.png")}
+      />
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -72,7 +74,7 @@ const Login = () => {
           <SubmitButton label="login" />
         </>
       </Formik>
-    </Container>
+    </View>
   );
 };
 
