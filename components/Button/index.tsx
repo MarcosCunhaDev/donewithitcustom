@@ -7,13 +7,15 @@ interface ButtonI {
   label: string;
   color?: string;
   onPress: () => void;
+  disabled?: boolean;
 }
 
-const Button = ({ label, color, onPress }: ButtonI) => {
+const Button = ({ label, color, onPress, disabled }: ButtonI) => {
   const { colors } = useTheme();
 
   return (
     <TouchableOpacity
+      disabled={disabled}
       onPress={onPress}
       style={{
         ...styles.buttonPrincipal,

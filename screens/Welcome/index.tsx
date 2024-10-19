@@ -10,12 +10,14 @@ import {
   Logo,
   Tagline,
 } from "./styles";
+import { StatusBar } from "expo-status-bar";
 
 const WelcomeScreen = () => {
   const navigation = useNavigation<any>();
 
   return (
     <Container>
+      <StatusBar style="dark" />
       <Image blurRadius={2} source={require("../../assets/background.jpg")}>
         <BoxLogo>
           <Logo source={require("../../assets/logo-red.png")} />

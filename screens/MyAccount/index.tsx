@@ -10,6 +10,7 @@ import Screen from "../Default";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { StatusBar } from "expo-status-bar";
 
+
 const styles = StyleSheet.create({
   container: {
     marginVertical: 20,
@@ -64,7 +65,7 @@ const MyAccount = () => {
           title={user?.name}
           subTitle={user?.email}
           image={data.image}
-          onPress={() => console.log("nothing")}
+          onPress={() => navigation.navigate("ProfileScreen")}
         />
       </View>
       <View style={styles.container}>

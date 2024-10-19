@@ -3,10 +3,10 @@ import { useAuthContext } from "@/auth/context";
 import AppFormField from "@/components/Forms/AppFormField";
 import ErrorMessage from "@/components/Forms/ErrorMessage";
 import SubmitButton from "@/components/Forms/SubmitButton";
-import { Formik } from "formik";
+import { Formik, useFormik, useFormikContext } from "formik";
 import React, { useEffect, useState } from "react";
 import * as Yup from "yup";
-import { Container, Logo } from "./styles";
+import { Container, Logo, ContainerButton, ContainerInputs } from "./styles";
 import { useLogin, useRegisterUser } from "@/hooks/react-query/auth";
 import ActivityIndicator from "@/components/ActivityIndicator";
 
@@ -38,6 +38,8 @@ const Signup = () => {
   } = useRegisterUser();
   const { isPending: isPendingLogin } = useLogin();
 
+  const {} = useFormik();
+
   const handleSubmit = async ({ name, email, password }: SignupFormValues) => {
     await signup({ name, email, password });
   };
@@ -56,34 +58,38 @@ const Signup = () => {
               error="Invalid email and/or password."
               visible={isErrorSignup}
             />
-            <AppFormField
-              icon="account"
-              placeholder="Name"
-              autoCapitalize="none"
-              name="name"
-              autoCorrect={false}
-              keyboardType="default"
-              textContentType="name"
-            />
-            <AppFormField
-              icon="email"
-              placeholder="Email"
-              autoCapitalize="none"
-              name="email"
-              autoCorrect={false}
-              keyboardType="email-address"
-              textContentType="emailAddress"
-            />
-            <AppFormField
-              icon="lock"
-              placeholder="Password"
-              autoCapitalize="none"
-              name="password"
-              autoCorrect={false}
-              textContentType="password"
-              secureTextEntry
-            />
-            <SubmitButton label="Register" />
+            <ContainerInputs>
+              <AppFormField
+                icon="account"
+                placeholder="Name"
+                autoCapitalize="none"
+                name="name"
+                autoCorrect={false}
+                keyboardType="default"
+                textContentType="name"
+              />
+              <AppFormField
+                icon="email"
+                placeholder="Email"
+                autoCapitalize="none"
+                name="email"
+                autoCorrect={false}
+                keyboardType="email-address"
+                textContentType="emailAddress"
+              />
+              <AppFormField
+                icon="lock"
+                placeholder="Password"
+                autoCapitalize="none"
+                name="password"
+                autoCorrect={false}
+                textContentType="password"
+                secureTextEntry
+              />
+            </ContainerInputs>
+            <ContainerButton>
+              <SubmitButton label="Register" />
+            </ContainerButton>
           </>
         </Formik>
       </Container>

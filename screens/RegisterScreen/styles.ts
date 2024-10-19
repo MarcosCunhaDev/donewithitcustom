@@ -12,4 +12,14 @@ const Container = styled.View`
   padding: 10px;
 `;
 
-export { Logo, Container };
+const ContainerInputs = styled.View`
+  border-width: 1px;
+  gap:20px;
+`;
+
+const ContainerButton = styled.View`
+  border-width: 1px;
+  margin-top: 40px;
+`;
+
+export { Logo, Container, ContainerInputs, ContainerButton };
