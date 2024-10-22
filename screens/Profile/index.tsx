@@ -1,7 +1,6 @@
 import { login } from "@/api/auth";
 import { useAuthContext } from "@/auth/context";
 import AppFormField from "@/components/Forms/AppFormField";
-import ErrorMessage from "@/components/Forms/ErrorMessage";
 import SubmitButton from "@/components/Forms/SubmitButton";
 import { Formik } from "formik";
 import React, { useState } from "react";
@@ -13,32 +12,33 @@ import { InputPicture } from "@/components/InputPicture";
 
 interface LoginFormValues {
   email: string;
-  password: string;
+  name: string;
 }
 
 const initialValues: LoginFormValues = {
   email: "",
-  password: "",
+  name: "",
 };
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
-  password: Yup.string().required().min(4).label("Password"),
+  name: Yup.string().required().min(4).label("Name"),
 });
 
 const Profile = () => {
   const { logInUser } = useAuthContext();
-  const { mutate: login, error, isPending, isError } = useLogin();
+  const { error, isPending, isError } = useLogin();
   const { user, setUser, logOut } = useAuthContext();
 
   const handleSubmit = async ({
     email,
-    password,
+    name,
   }: {
     email: string;
-    password: string;
+    name: string;
   }) => {
-    await login({ email, password });
+    console.log("chamou a função aqui", { name, email });
+    // await login({ email, password });
   };
 
   return (
@@ -49,10 +49,6 @@ const Profile = () => {
         onSubmit={handleSubmit}
       >
         <>
-          <ErrorMessage
-            error="Invalid email and/or password."
-            visible={isError}
-          />
           <InputPicture />
           <AppFormField
             icon="account"

@@ -1,10 +1,5 @@
 import React from "react";
-import { StyleSheet } from "react-native";
-import AppText from "../AppText";
-
-const styles = StyleSheet.create({
-  error: { color: "red", fontSize: 14, alignSelf: "center" },
-});
+import { Text } from "react-native";
 
 interface ErrorMessageI {
   error: string;
@@ -15,7 +10,7 @@ const ErrorMessage = ({ error, visible }: ErrorMessageI) => {
   if (!visible || !error) {
     return null;
   }
-  return <AppText style={styles.error}>{error}</AppText>;
+  return <Text className="self-center text-sm text-red-500">{error}</Text>;
 };
 
 export default ErrorMessage;

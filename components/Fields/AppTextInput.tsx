@@ -26,17 +26,19 @@ const styles = StyleSheet.create({
 interface AppTextInputI extends TextInputProps {
   icon?: keyof typeof MaterialCommunityIcons.glyphMap;
   widthContainer?: DimensionValue;
+  hasErrors?: boolean;
 }
 
 const AppTextInput = ({
   icon,
   widthContainer,
+  hasErrors,
   ...otherProps
 }: AppTextInputI) => {
   return (
     <View
       style={{ ...styles.container, width: widthContainer || "100%" }}
-      className="rounded-md bg-gray-100"
+      className={`rounded-md ${hasErrors ? "bg-red-200" : "bg-gray-100"} `}
     >
       {icon && (
         <MaterialCommunityIcons

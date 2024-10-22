@@ -19,7 +19,7 @@ const Button = ({ label, color, onPress, disabled }: ButtonI) => {
       onPress={onPress}
       style={{
         ...styles.buttonPrincipal,
-        backgroundColor: color || colors.primary,
+        backgroundColor: disabled ? "gray" : color || colors.primary,
       }}
     >
       <Text style={styles.textButton}>{label}</Text>
