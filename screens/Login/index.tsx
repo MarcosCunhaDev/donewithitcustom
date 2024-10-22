@@ -71,7 +71,7 @@ const Login = () => {
             textContentType="password"
             secureTextEntry
           />
-          <SubmitButton label="login" />
+          <SubmitButton label="login" isLoading={isPending} />
         </>
       </Formik>
     </View>
