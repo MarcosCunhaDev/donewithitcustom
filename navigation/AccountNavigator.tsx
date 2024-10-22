@@ -9,7 +9,11 @@ const Stack = createNativeStackNavigator();
 export default function AccountNavigator() {
   return (
     <Stack.Navigator screenOptions={{ headerBackTitleVisible: false }}>
-      <Stack.Screen name="AccountScreen" component={AccountScreen} />
+      <Stack.Screen
+        name="AccountScreen"
+        component={AccountScreen}
+        options={{ headerTitle: "Account" }}
+      />
       <Stack.Screen name="MessagesScreen" component={MyMessages} />
       <Stack.Screen
         name="ProfileScreen"
