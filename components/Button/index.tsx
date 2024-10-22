@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity, ActivityIndicator } from "react-native";
 import styles from "./styles";
 import { useTheme } from "styled-components/native";
 
@@ -8,9 +8,16 @@ interface ButtonI {
   color?: string;
   onPress: () => void;
   disabled?: boolean;
+  isLoading?: boolean;
 }
 
-const Button = ({ label, color, onPress, disabled }: ButtonI) => {
+const Button = ({
+  label,
+  color,
+  onPress,
+  disabled,
+  isLoading = false,
+}: ButtonI) => {
   const { colors } = useTheme();
 
   return (
@@ -22,7 +29,11 @@ const Button = ({ label, color, onPress, disabled }: ButtonI) => {
         backgroundColor: disabled ? "gray" : color || colors.primary,
       }}
     >
-      <Text style={styles.textButton}>{label}</Text>
+      {isLoading ? (
+        <ActivityIndicator size={"small"} color={"white"} />
+      ) : (
+        <Text style={styles.textButton}>{label}</Text>
+      )}
     </TouchableOpacity>
   );
 };

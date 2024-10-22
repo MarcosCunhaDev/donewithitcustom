@@ -6,9 +6,15 @@ interface SubmitButtonI {
   label: string;
   color?: string;
   disabled?: boolean;
+  isLoading?: boolean;
 }
 
-const SubmitButton = ({ label, color, disabled }: SubmitButtonI) => {
+const SubmitButton = ({
+  label,
+  color,
+  disabled,
+  isLoading = false,
+}: SubmitButtonI) => {
   const { handleSubmit, isValid } = useFormikContext();
 
   return (
@@ -17,6 +23,7 @@ const SubmitButton = ({ label, color, disabled }: SubmitButtonI) => {
       label={label}
       onPress={handleSubmit}
       color={color ? color : undefined}
+      isLoading={isLoading}
     />
   );
 };
