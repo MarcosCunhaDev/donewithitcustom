@@ -11,14 +11,6 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { StatusBar } from "expo-status-bar";
 
 
-const styles = StyleSheet.create({
-  container: {
-    marginVertical: 20,
-  },
-  screen: {
-    backgroundColor: colors.light,
-  },
-});
 
 const data = {
   name: "Marcos Cunha",
@@ -60,15 +52,16 @@ const MyAccount = () => {
   return (
     <Screen>
       <StatusBar style="dark" />
-      <View style={styles.container}>
+      <View className="my-5">
         <ListItem
           title={user?.name}
           subTitle={user?.email}
           image={data.image}
           onPress={() => navigation.navigate("ProfileScreen")}
+          showChevrons
         />
       </View>
-      <View style={styles.container}>
+      <View className="my-5">
         <FlatList
           data={dummy_data}
           keyExtractor={(item) => item.title}
